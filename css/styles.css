@@ -8,11 +8,14 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 9fr;
-    grid-template-rows: 1fr 9fr;
+    grid-template-columns: .2fr repeat(3, 1fr);
+    grid-template-rows: .2fr .5fr repeat(3, 1fr);
     grid-template-areas: 
-        "header header"
-        "nav main";
+        "header header header header"
+        "nav title search search"
+        "nav main main main"
+        "nav main main main";
+        height: 100vh;
 }
 
 header {
@@ -52,8 +55,7 @@ h1 {
 
 nav {
     background-color: #896ccc;
-    width: 50px;
-    padding: 15px;
+    padding: 25px;
     grid-area: nav;
 }
 
@@ -61,8 +63,21 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+h2 {
+    padding-right: 30px;
+    border-right: 1px solid black;
+    grid-area: title;
 }
 
 .search-bar {
     margin-left: auto;
+    grid-area: search;
+}
+
+.main-container {
+    grid-area: main;
 }
