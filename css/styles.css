@@ -1,0 +1,68 @@
+/*************************************
+             BASE STYLES
+*************************************/
+
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas: 
+        "header header"
+        "nav main";
+}
+
+header {
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #7a4ce6;
+    padding: 15px;
+    grid-area: header;
+}
+
+h1 {
+    margin-right: auto;
+    color: white;
+}
+
+.bell-icon {
+    height: 40px;
+    width: 30px;
+    padding-right: 20px;
+    border-right: 1px solid white;
+}
+
+.keanu {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.profile-name {
+    color: white;
+
+}
+
+nav {
+    background-color: #896ccc;
+    width: 50px;
+    padding: 15px;
+    grid-area: nav;
+}
+
+.dash-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-bar {
+    margin-left: auto;
+}
