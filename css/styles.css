@@ -8,8 +8,8 @@
 
 body {
     display: grid;
-    grid-template-columns: .2fr repeat(3, 1fr);
-    grid-template-rows: .2fr .5fr repeat(3, 1fr);
+    grid-template-columns: 5% repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr repeat(2, 1fr);
     grid-template-areas: 
         "header header header header"
         "nav title search search"
