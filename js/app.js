@@ -109,7 +109,7 @@ let dailyChart = new Chart(dailyCanvas, {
 let mobileData = {
     labels: ["Phones", "Tablets", "Desktop"],
     datasets: [{
-        data: [14, 18, 68],
+        data: [1402, 1879, 6834],
         backgroundColor: ['#40b7bf', '#0fcc6e', '#9774bf'],
         borderWidth: 0
     }]

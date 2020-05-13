@@ -62,6 +62,11 @@ nav {
     align-items: center;
 }
 
+nav a img {
+    height: 30px;
+    width: 30px;
+}
+
 .dash-header {
     display: flex;
     flex-direction: row;
@@ -84,6 +89,10 @@ h2 {
 .main-container {
     grid-area: main;
 }
+
+/*************************************
+            CHART STYLES
+*************************************/
 
 .traffic-header {
     display: flex;
@@ -124,3 +133,66 @@ h2 {
     padding-left: 20px;
 }
 
+/*************************************
+          SOCIAL STAT STYLES
+*************************************/
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.twitter-stats,
+.facebook-stats,
+.google-plus-stats {
+    background-color: #FBFBFB;
+    border: 1px solid #D8D8D8;
+    margin: 1rem;
+    min-width: 300px;
+    height: 125px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-logo {
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    background-color: #7377BF;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: auto;
+}
+
+.twitter-stats svg,
+.facebook-stats svg,
+.google-plus-stats svg {
+    width: 40px;
+    margin: auto;
+}
+
+.social-text {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.social-name {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    color: #9774bf;
+    font-weight: 600;
+}
+
+.social-number {
+    font-size: 3rem;
+    margin-top: 1px;
+    margin-bottom: 1rem;
+    color: slategray;
+}
