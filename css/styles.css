@@ -6,20 +6,18 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
-body {
+.main-grid {
     display: grid;
-    grid-template-columns: 5% repeat(3, 1fr);
-    grid-template-rows: 1fr 2fr repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px 60px minmax(150px, auto);
     grid-template-areas: 
-        "header header header header"
-        "nav title search search"
-        "nav main main main"
-        "nav main main main";
+        "header"
+        "nav"
+        "main";
         height: 100vh;
 }
 
 header {
-    height: 50px;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -31,6 +29,7 @@ header {
 h1 {
     margin-right: auto;
     color: white;
+    font-size: 1.5rem;
 }
 
 .bell-icon {
@@ -50,13 +49,17 @@ h1 {
 
 .profile-name {
     color: white;
-
+    font-size: .9em;
 }
 
 nav {
     background-color: #896ccc;
     padding: 25px;
     grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .dash-header {
@@ -81,3 +84,43 @@ h2 {
 .main-container {
     grid-area: main;
 }
+
+.traffic-header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.traffic-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.traffic-header h3 {
+    margin-right: auto;
+    color: lightslategray;
+}
+.traffic-nav-link {
+    margin-left: 10px;
+    padding: 5px;
+    color: lightslategray;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #6ccc89;
+    border-radius: 40px;
+    color: white;
+}
+
+.chart-header {
+    margin-right: auto;
+    color: lightslategray;
+    padding-left: 20px;
+}
+
