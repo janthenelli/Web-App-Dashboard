@@ -69,25 +69,45 @@ nav a img {
 .dash-header {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     padding-right: 20px;
     padding-left: 20px;
     color: lightslategray;
 }
 
-h2 {
+.dash {
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-right: 30px;
-    border-right: 1px solid black;
-    grid-area: title;
 }
 
 .search-bar {
-    margin-left: auto;
-    grid-area: search;
+    margin: 0 0 0 auto;
+}
+
+#searchBox {
+    outline: none;
+    padding: 0 0 0 10px;
+    height: 30px;
+    border: 2px solid #D8D8D8;
+    border-radius: 10px;
 }
 
 .main-container {
     grid-area: main;
+}
+
+.traffic-container,
+.daily-container,
+.mobile-container,
+.social-container,
+.new-member-container,
+.activity-container,
+.message-container {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D8D8D8;
 }
 
 /*************************************
@@ -99,6 +119,7 @@ h2 {
     flex-direction: row;
     padding-left: 20px;
     padding-right: 20px;
+    border-top: 1px solid #D8D8D8;
 }
 
 .traffic-nav {
@@ -267,7 +288,7 @@ h2 {
           MESSAGE USER STYLES
 *************************************/
 
-.message-container {
+.message-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
