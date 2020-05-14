@@ -331,7 +331,7 @@ h2 {
     border-radius:50%;
     background-color: white;
     top: 1px;
-    left: 1px;
+    left: 1px; 
     transition: all 0.3s;
 }
   
@@ -411,4 +411,15 @@ h2 {
     border: 2px solid;
     border-radius: 10px;
     margin-left: auto;
+}
+
+.save-setting,
+.cancel-setting {
+    outline: none;
+    cursor: pointer;
+}
+
+.save-setting:active,
+.cancel-setting:active {
+    background-color: #9773bf;
 }
