@@ -14,7 +14,6 @@
         "header"
         "nav"
         "main";
-        height: 100vh;
 }
 
 header {
@@ -295,7 +294,7 @@ h2 {
 
 .send-message-btn {
     margin: 0 20px 20px 20px;
-    height: 45px;
+    height: 50px;
     border: 2px solid;
     border-radius: 10px;
     background-color: #7377BF;
@@ -321,6 +320,7 @@ h2 {
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     transition: all 0.3s;
+    margin-right: 40%;
 }
 
 .switch::after {
@@ -347,11 +347,16 @@ h2 {
     display : none;
 }
 
-.settings {
+.setting-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.settings {
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .email-notif-wrapper,
@@ -366,4 +371,44 @@ h2 {
     color: lightslategray;
     font-size: 1rem;
     font-weight: 600;
+    margin-right: auto;
+}
+
+.timezones {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 2px solid #d8d8d8;
+    border-radius: 10px;
+}
+
+.setting-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.save-setting {
+    height: 50px;
+    width: 45%;
+    background-color: #7377BF;
+    color: white;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.cancel-setting {
+    height: 50px;
+    width: 45%;
+    background-color: #7377BF;
+    color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    margin-left: auto;
 }
