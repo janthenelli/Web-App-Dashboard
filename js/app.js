@@ -3,6 +3,8 @@ const trafficLIs = document.getElementsByClassName('traffic-nav-link')
 const dailyCanvas = document.getElementById('daily-traffic').getContext('2d')
 const mobileCanvas = document.getElementById('mobile-users').getContext('2d')
 const alertBanner = document.getElementById('alert')
+const bellIcon = document.querySelector('.bell-icon')
+const dropdownMenu = document.querySelector('.dropdown-content')
 
 displayAlert()
 
@@ -10,7 +12,7 @@ function displayAlert() {
     alertBanner.innerHTML = 
     `
     <div class="alert-banner">
-        <p class="alert-message"><strong>ALERT:</strong> You have <strong>7</strong> unread messages.</p>
+        <p class="alert-message"><strong>ALERT:</strong> You have <strong>3</strong> unread messages.</p>
         <p class="alert-close">X</p>
     </div>
     `
@@ -24,7 +26,20 @@ alertBanner.addEventListener('click', e => {
     }
 })
 
+bellIcon.addEventListener('click', showDropdown)
 
+function showDropdown() {
+    dropdownMenu.classList.toggle('show')
+}
+
+window.onclick = function(e) {
+    if (!e.target.matches('.bell-icon')) {
+        if (dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show')
+        }
+        
+    }
+}
 
 
 
