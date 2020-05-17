@@ -2,6 +2,33 @@ const trafficCanvas = document.getElementById('traffic').getContext('2d')
 const trafficLIs = document.getElementsByClassName('traffic-nav-link')
 const dailyCanvas = document.getElementById('daily-traffic').getContext('2d')
 const mobileCanvas = document.getElementById('mobile-users').getContext('2d')
+const alertBanner = document.getElementById('alert')
+
+displayAlert()
+
+function displayAlert() {
+    alertBanner.innerHTML = 
+    `
+    <div class="alert-banner">
+        <p class="alert-message"><strong>ALERT:</strong> You have <strong>7</strong> unread messages.</p>
+        <p class="alert-close">X</p>
+    </div>
+    `
+}
+
+alertBanner.addEventListener('click', e => {
+    const close = e.target
+    if (close.classList.contains('alert-close')) {
+        console.log(close)
+        alertBanner.style.display = 'none'
+    }
+})
+
+
+
+
+
+
 
 const trafficChartData = [
     {"points": [125, 240, 200, 170, 195, 160, 185],

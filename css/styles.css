@@ -36,7 +36,13 @@ h1 {
     height: 40px;
     width: 30px;
     padding-right: 20px;
-    border-right: 1px solid white;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform .5s ease-in-out;
+}
+
+.bell-icon:hover {
+    transform: scale(1.2);
 }
 
 .keanu {
@@ -44,7 +50,12 @@ h1 {
     width: 40px;
     border-radius: 50%;
     margin-right: 10px;
-    margin-left: 20px;
+    
+}
+
+.notif-border {
+    padding-left: 20px;
+    border-left: 1px solid white;
 }
 
 .profile-name {
@@ -111,6 +122,40 @@ nav a img {
 }
 
 /*************************************
+   ALERT/ALERT ICON DROPDOWN STYLES
+*************************************/
+
+.alert {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.alert-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #7377BF;
+    border-radius: 5px;
+    background-color: #7377BF;
+    color: white;
+}
+
+.alert-message {
+    margin: 0 0 0 10px;
+}
+
+.alert-close {
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/*************************************
             CHART STYLES
 *************************************/
 
@@ -154,20 +199,13 @@ nav a img {
     padding-left: 20px;
 }
 
-
-
-/* .daily-container,
-.mobile-container {
-    max-height: 300px;
-} */
-
 /*************************************
           SOCIAL STAT STYLES
 *************************************/
 
 .social-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -178,7 +216,7 @@ nav a img {
     background-color: #FBFBFB;
     border: 1px solid #D8D8D8;
     margin: 1rem;
-    width: 30%;
+    width: 50%;
     height: 125px;
     border-radius: 10px;
     display: flex;
@@ -327,8 +365,9 @@ nav a img {
 }
 
 .send-message-btn {
-    margin: 0 20px 20px 20px;
     height: 50px;
+    padding: 0;
+    margin: 0 20px;
     border: 2px solid;
     border-radius: 10px;
     background-color: #7377BF;
@@ -398,11 +437,11 @@ label {
     left: 10px;
 }
 
-.setting-wrapper {
+.settings-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .settings {
@@ -452,6 +491,7 @@ label {
     color: white;
     border: 2px solid;
     border-radius: 10px;
+    padding: 0;
 }
 
 .cancel-setting {
@@ -462,6 +502,7 @@ label {
     border: 2px solid;
     border-radius: 10px;
     margin-left: auto;
+    padding: 0;
 }
 
 .save-setting,
@@ -528,4 +569,32 @@ label {
     .daily-traffic.chartjs-render-monitor {
         height: 500px;
     }
+
+    .social-wrapper {
+        flex-direction: row;
+    }
+
+    .twitter-stats,
+    .facebook-stats,
+    .google-plus-stats {
+        width: 30%;
+    }
+
+    .message-form-container,
+    .settings {
+        height: 250px;
+    }
+
+    .settings {
+        padding-bottom: 20px;
+    }
+
+    .setting-buttons {
+        margin-bottom: 0;
+    }
+
+    .set-public-wrapper {
+        margin-bottom: auto;
+    }
 }
+
