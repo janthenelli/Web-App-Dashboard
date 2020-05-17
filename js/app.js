@@ -121,8 +121,9 @@ let mobileOptions = {
         align: 'center',
         padding: 50,
         labels: {
-            boxWidth: 25,
-            fontStyle: 'bold'
+            boxWidth: 40,
+            fontStyle: 'bold',
+            fontSize: 25
         }
     }
 }
