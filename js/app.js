@@ -5,6 +5,9 @@ const mobileCanvas = document.getElementById('mobile-users').getContext('2d')
 const alertBanner = document.getElementById('alert')
 const bellIcon = document.querySelector('.bell-icon')
 const dropdownMenu = document.querySelector('.dropdown-content')
+const sendMessageBtn = document.querySelector('.send-message-btn')
+const sendMessageAlert = document.querySelector('.message-alert')
+
 
 displayAlert()
 
@@ -41,7 +44,42 @@ window.onclick = function(e) {
     }
 }
 
+sendMessageBtn.addEventListener('click', sendMessageHandler)
 
+function setAlertStyles(className) {
+    sendMessageAlert.classList.add(className)
+    sendMessageAlert.style.display = 'flex'
+    sendMessageAlert.style.flexDirection = 'row'
+    sendMessageAlert.style.alignItems = 'center'
+}
+
+function sendMessageHandler() {
+    if ($("#search-user").val() == "") {
+        //add error class to message send div applying red background, error message stating to select user/not have empty message
+        setAlertStyles('msg-error')
+        $(".msg-alert-text").html("Please enter a valid user to send the message to.")
+    } else if ($("#message-text").val() == "") {
+        setAlertStyles('msg-error')
+        $(".msg-alert-text").html("You must enter a message.")
+    } else {
+        //delete text in user search field and in message box and add sent class to div
+        $("#search-user").val("")
+        $("#message-text").val("")
+        setAlertStyles('msg-sent')
+        $(".msg-alert-text").html("Message sent.")
+    }
+}
+
+sendMessageAlert.addEventListener('click', e => {
+    const close = e.target
+    if (close.classList.contains('close-msg-alert')) {
+        sendMessageAlert.style.display = 'none'
+    }
+})
+
+var users = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
+
+$(".search-user").autocomplete({source: users})
 
 
 

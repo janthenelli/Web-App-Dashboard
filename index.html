@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -226,12 +228,18 @@
 
                 <div class="side-by-side">
                     <div class="message-container">
-                        <h3 class="chart-header">Message User</h3>
+                        <div class="message-header">
+                            <h3 class="chart-header">Message User</h3>
+                            <div class="message-alert">
+                                <p class="msg-alert-text"></p>
+                                <p class="close-msg-alert">X</p>
+                            </div>
+                        </div>
                         <div class="message-user">
                             <form class="message-form-container">
-                                <input class="search-user" type="text" placeholder="Search for User">
-                                <textarea class="message-text" placeholder="Message for User"></textarea>
-                                <button class="send-message-btn">SEND</button>
+                                <input class="search-user" id="search-user" type="text" placeholder="Search for User">
+                                <textarea class="message-text" id="message-text" placeholder="Message for User"></textarea>
+                                <button type="button" class="send-message-btn">SEND</button>
                             </form>
                         </div>
                     </div>
