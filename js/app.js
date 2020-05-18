@@ -54,15 +54,15 @@ function setAlertStyles(className) {
 }
 
 function sendMessageHandler() {
-    if ($("#search-user").val() == "") {
-        //add error class to message send div applying red background, error message stating to select user/not have empty message
+    sendMessageAlert.classList.remove('msg-error')
+    sendMessageAlert.classList.remove('msg-sent')
+    if (!users.includes($("#search-user").val())) { //|| $("#message-text").val() == "") {
         setAlertStyles('msg-error')
         $(".msg-alert-text").html("Please enter a valid user to send the message to.")
     } else if ($("#message-text").val() == "") {
         setAlertStyles('msg-error')
         $(".msg-alert-text").html("You must enter a message.")
     } else {
-        //delete text in user search field and in message box and add sent class to div
         $("#search-user").val("")
         $("#message-text").val("")
         setAlertStyles('msg-sent')
