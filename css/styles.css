@@ -129,6 +129,10 @@ nav a img {
     border-bottom: 1px solid #D8D8D8;
 }
 
+canvas {
+    max-width: 100%;
+}
+
 /*************************************
    ALERT/ALERT ICON DROPDOWN STYLES
 *************************************/

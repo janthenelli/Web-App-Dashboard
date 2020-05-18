@@ -84,8 +84,8 @@ $(".search-user").autocomplete({source: users})
 
 
 $("#save-setting").click( () => {
-    localStorage.setItem('email_notifications', $("#email-notif-check").is(':checked'))
-    localStorage.setItem('public_profile', $("#set-public-check").is(':checked'))
+    localStorage.setItem('email-notifications', $("#email-notif-check").is(':checked'))
+    localStorage.setItem('public-profile', $("#set-public-check").is(':checked'))
     localStorage.setItem('timezoneIndex', $("#timezones").prop('selectedIndex'))
 })
 
@@ -99,12 +99,12 @@ $("#cancel-setting").click( () => {
     if ($("#timezones").prop('selectedIndex') != 0) {
         $("#timezones").prop('selectedIndex', 0)
     }
-    localStorage.removeItem('email-notifcations')
+    localStorage.removeItem('email-notifications')
     localStorage.removeItem('public-profile')
     localStorage.removeItem('timezoneIndex')
 })
 
-$("#email-notif-check").prop('checked', JSON.parse(localStorage.getItem('email-notifcations')))
+$("#email-notif-check").prop('checked', JSON.parse(localStorage.getItem('email-notifications')))
 $("#set-public-check").prop('checked', JSON.parse(localStorage.getItem('public-profile')))
 $("#timezones").prop('selectedIndex', JSON.parse(localStorage.getItem('timezoneIndex')))
 
@@ -192,7 +192,6 @@ let dailyData = {
 }
 
 let dailyOptions = {
-    aspectRatio: 2.5,
     animation: {
         duration: 1000
     },
@@ -205,7 +204,9 @@ let dailyOptions = {
     },
     legend : {
         display: false
-    }
+    },
+    responsive: true,
+    maintainAspectRatio: true
 }
 
 let dailyChart = new Chart(dailyCanvas, {
@@ -233,7 +234,9 @@ let mobileOptions = {
             fontStyle: 'bold',
             fontSize: 25
         }
-    }
+    },
+    responsive: true,
+    maintainAspectRatio: true
 }
 
 let mobileChart = new Chart(mobileCanvas, {
