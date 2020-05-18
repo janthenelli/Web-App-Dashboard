@@ -8,17 +8,8 @@ const dropdownMenu = document.querySelector('.dropdown-content')
 const sendMessageBtn = document.querySelector('.send-message-btn')
 const sendMessageAlert = document.querySelector('.message-alert')
 
-const emailNotifToggle = document.getElementById('email-notif-check')
-const publicProfToggle = document.getElementById('set-public-check')
-const timezone = document.getElementById('timezones')
-const saveButton = document.getElementById('save-setting')
-const cancelButton = document.getElementById('cancel-setting')
-
 
 displayAlert()
-
-// $("#email-notif-check").checked = JSON.parse(localStorage.getItem('email_notifications'))
-// $("#set-public-check").checked = JSON.parse(localStorage.getItem('public_profile'))
 
 function displayAlert() {
     alertBanner.innerHTML = 
@@ -92,36 +83,30 @@ $(".search-user").autocomplete({source: users})
 
 
 
-// $("#save-setting").click( () => {
-//     console.log('clicked')
-//     localStorage.setItem('email_notifications', $("#email-notif-check").is(':checked'))
-//     localStorage.setItem('public_profile', $("#set-public-check").is(':checked'))
-// })
-
-saveButton.addEventListener('click', () => {
-    localStorage.setItem('email-notifications', emailNotifToggle.checked)
-    localStorage.setItem('public-profile', publicProfToggle.checked)
-    localStorage.setItem('timezoneIndex', timezone.selectedIndex)
+$("#save-setting").click( () => {
+    localStorage.setItem('email_notifications', $("#email-notif-check").is(':checked'))
+    localStorage.setItem('public_profile', $("#set-public-check").is(':checked'))
+    localStorage.setItem('timezoneIndex', $("#timezones").prop('selectedIndex'))
 })
 
-cancelButton.addEventListener('click', () => {
-    if (emailNotifToggle.checked == true) {
-        emailNotifToggle.checked = false
+$("#cancel-setting").click( () => {
+    if ($("#email-notif-check").is(':checked') == true) {
+        $("#email-notif-check").prop('checked', false)
     }
-    if (publicProfToggle.checked == true) {
-        publicProfToggle.checked = false
+    if ($("#set-public-check").is(':checked') == true) {
+        $("#set-public-check").prop('checked',false)
     }
-    if (timezone.selectedIndex != 0) {
-        timezone.selectedIndex = 0
+    if ($("#timezones").prop('selectedIndex') != 0) {
+        $("#timezones").prop('selectedIndex', 0)
     }
     localStorage.removeItem('email-notifcations')
     localStorage.removeItem('public-profile')
     localStorage.removeItem('timezoneIndex')
 })
 
-emailNotifToggle.checked = JSON.parse(localStorage.getItem('email-notifcations'))
-publicProfToggle.checked = JSON.parse(localStorage.getItem('public-profile'))
-timezone.selectedIndex = JSON.parse(localStorage.getItem('timezoneIndex'))
+$("#email-notif-check").prop('checked', JSON.parse(localStorage.getItem('email-notifcations')))
+$("#set-public-check").prop('checked', JSON.parse(localStorage.getItem('public-profile')))
+$("#timezones").prop('selectedIndex', JSON.parse(localStorage.getItem('timezoneIndex')))
 
 
 
