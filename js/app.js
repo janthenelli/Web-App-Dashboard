@@ -8,8 +8,17 @@ const dropdownMenu = document.querySelector('.dropdown-content')
 const sendMessageBtn = document.querySelector('.send-message-btn')
 const sendMessageAlert = document.querySelector('.message-alert')
 
+const emailNotifToggle = document.getElementById('email-notif-check')
+const publicProfToggle = document.getElementById('set-public-check')
+const timezone = document.getElementById('timezones')
+const saveButton = document.getElementById('save-setting')
+const cancelButton = document.getElementById('cancel-setting')
+
 
 displayAlert()
+
+// $("#email-notif-check").checked = JSON.parse(localStorage.getItem('email_notifications'))
+// $("#set-public-check").checked = JSON.parse(localStorage.getItem('public_profile'))
 
 function displayAlert() {
     alertBanner.innerHTML = 
@@ -80,6 +89,40 @@ sendMessageAlert.addEventListener('click', e => {
 var users = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
 
 $(".search-user").autocomplete({source: users})
+
+
+
+// $("#save-setting").click( () => {
+//     console.log('clicked')
+//     localStorage.setItem('email_notifications', $("#email-notif-check").is(':checked'))
+//     localStorage.setItem('public_profile', $("#set-public-check").is(':checked'))
+// })
+
+saveButton.addEventListener('click', () => {
+    localStorage.setItem('email-notifications', emailNotifToggle.checked)
+    localStorage.setItem('public-profile', publicProfToggle.checked)
+    localStorage.setItem('timezoneIndex', timezone.selectedIndex)
+})
+
+cancelButton.addEventListener('click', () => {
+    if (emailNotifToggle.checked == true) {
+        emailNotifToggle.checked = false
+    }
+    if (publicProfToggle.checked == true) {
+        publicProfToggle.checked = false
+    }
+    if (timezone.selectedIndex != 0) {
+        timezone.selectedIndex = 0
+    }
+    localStorage.removeItem('email-notifcations')
+    localStorage.removeItem('public-profile')
+    localStorage.removeItem('timezoneIndex')
+})
+
+emailNotifToggle.checked = JSON.parse(localStorage.getItem('email-notifcations'))
+publicProfToggle.checked = JSON.parse(localStorage.getItem('public-profile'))
+timezone.selectedIndex = JSON.parse(localStorage.getItem('timezoneIndex'))
+
 
 
 
