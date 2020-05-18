@@ -739,5 +739,9 @@ label {
     .set-public-wrapper {
         margin-bottom: auto;
     }
+
+    .flex-end {
+        padding-top: 35px;
+    }
 }
 
