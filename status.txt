@@ -1,0 +1,7 @@
+passed/exceeds expectations, complete and fully functioning 
+
+extra addons:
+	-close notification dropdown on window click
+	-close each individual notification when click on X
+		-when none left, no longer open dropdown on bell icon click
+	-add popup message, like in send message section, to settings on save/cancel

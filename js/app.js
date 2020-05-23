@@ -33,16 +33,9 @@ bellIcon.addEventListener('click', showDropdown)
 
 function showDropdown() {
     dropdownMenu.classList.toggle('show')
+    $(".bell-notif").css("visibility", "hidden")
 }
 
-window.onclick = function(e) {
-    if (!e.target.matches('.bell-icon')) {
-        if (dropdownMenu.classList.contains('show')) {
-            dropdownMenu.classList.remove('show')
-        }
-        
-    }
-}
 
 sendMessageBtn.addEventListener('click', sendMessageHandler)
 
