@@ -7,7 +7,7 @@ const bellIcon = document.querySelector('.bell-icon')
 const dropdownMenu = document.querySelector('.dropdown-content')
 const sendMessageBtn = document.querySelector('.send-message-btn')
 const sendMessageAlert = document.querySelector('.message-alert')
-
+const settingsAlert = document.querySelector('.settings-alert')
 
 displayAlert()
 
@@ -39,26 +39,26 @@ function showDropdown() {
 
 sendMessageBtn.addEventListener('click', sendMessageHandler)
 
-function setAlertStyles(className) {
-    sendMessageAlert.classList.add(className)
-    sendMessageAlert.style.display = 'flex'
-    sendMessageAlert.style.flexDirection = 'row'
-    sendMessageAlert.style.alignItems = 'center'
+function setAlertStyles(alert, className) {
+    alert.classList.add(className)
+    alert.style.display = 'flex'
+    alert.style.flexDirection = 'row'
+    alert.style.alignItems = 'center'
 }
 
 function sendMessageHandler() {
     sendMessageAlert.classList.remove('msg-error')
     sendMessageAlert.classList.remove('msg-sent')
-    if (!users.includes($("#search-user").val())) { //|| $("#message-text").val() == "") {
-        setAlertStyles('msg-error')
+    if (!users.includes($("#search-user").val())) {
+        setAlertStyles(sendMessageAlert, 'msg-error')
         $(".msg-alert-text").html("Please enter a valid user to send the message to.")
     } else if ($("#message-text").val() == "") {
-        setAlertStyles('msg-error')
+        setAlertStyles(sendMessageAlert, 'msg-error')
         $(".msg-alert-text").html("You must enter a message.")
     } else {
         $("#search-user").val("")
         $("#message-text").val("")
-        setAlertStyles('msg-sent')
+        setAlertStyles(sendMessageAlert, 'msg-sent')
         $(".msg-alert-text").html("Message sent.")
     }
 }
@@ -80,6 +80,10 @@ $("#save-setting").click( () => {
     localStorage.setItem('email-notifications', $("#email-notif-check").is(':checked'))
     localStorage.setItem('public-profile', $("#set-public-check").is(':checked'))
     localStorage.setItem('timezoneIndex', $("#timezones").prop('selectedIndex'))
+    settingsAlert.classList.remove('settings-cancel')
+    settingsAlert.classList.remove('settings-save')
+    setAlertStyles(settingsAlert, 'settings-save')
+    $(".setting-alert-text").html("Settings saved.")
 })
 
 $("#cancel-setting").click( () => {
@@ -92,9 +96,20 @@ $("#cancel-setting").click( () => {
     if ($("#timezones").prop('selectedIndex') != 0) {
         $("#timezones").prop('selectedIndex', 0)
     }
+    settingsAlert.classList.remove('settings-cancel')
+    settingsAlert.classList.remove('settings-save')
+    setAlertStyles(settingsAlert, 'settings-cancel')
+    $(".setting-alert-text").html("Settings reset.")
     localStorage.removeItem('email-notifications')
     localStorage.removeItem('public-profile')
     localStorage.removeItem('timezoneIndex')
+})
+
+settingsAlert.addEventListener('click', e => {
+    const close = e.target
+    if (close.classList.contains('close-setting-alert')) {
+        settingsAlert.style.display = 'none'
+    }
 })
 
 $("#email-notif-check").prop('checked', JSON.parse(localStorage.getItem('email-notifications')))

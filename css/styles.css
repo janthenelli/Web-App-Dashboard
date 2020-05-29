@@ -456,14 +456,20 @@ canvas {
     background-color: #9773bf;
 }
 
-.message-header {
+/*************************************
+     MESSAGE/SETTING ALERT STYLES
+*************************************/
+
+.message-header,
+.settings-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.message-alert {
+.message-alert,
+.settings-alert {
     display: none; 
     height: 45px;
     width: 60%;
@@ -471,28 +477,33 @@ canvas {
     margin-right: 20px;
 }
 
-.message-alert p {
+.message-alert p,
+.settings-alert p {
     margin-top: 0;
     margin-bottom: 0;
     color: white;
 }
 
-.msg-alert-text {
+.msg-alert-text,
+.setting-alert-text {
     margin-right: auto;
     margin-left: 10px;
     font-size: .9rem;
 }
 
-.close-msg-alert {
+.close-msg-alert,
+.close-setting-alert {
     margin-right: 10px;
     cursor: pointer;
 }
 
-.msg-error {
+.msg-error,
+.settings-cancel {
     background-color: #f02424;
 }
 
-.msg-sent {
+.msg-sent,
+.settings-save {
     background-color: #07f271;
 }
 
