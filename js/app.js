@@ -24,16 +24,22 @@ function displayAlert() {
 alertBanner.addEventListener('click', e => {
     const close = e.target
     if (close.classList.contains('alert-close')) {
-        console.log(close)
         alertBanner.style.display = 'none'
     }
 })
 
 bellIcon.addEventListener('click', showDropdown)
+$(document).on('click', hideDropdown)
 
 function showDropdown() {
     dropdownMenu.classList.toggle('show')
     $(".bell-notif").css("visibility", "hidden")
+}
+
+function hideDropdown(e) {
+    if (e.target !== bellIcon && dropdownMenu.classList.contains('show')) {
+        dropdownMenu.classList.remove('show')
+    }
 }
 
 
@@ -117,13 +123,11 @@ $("#set-public-check").prop('checked', JSON.parse(localStorage.getItem('public-p
 $("#timezones").prop('selectedIndex', JSON.parse(localStorage.getItem('timezoneIndex')))
 
 
-
-
 const trafficChartData = [
-    {"points": [125, 240, 200, 170, 195, 160, 185],
-     "labels": ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]},
     {"points": [14, 19, 28, 26, 31, 25, 22, 19],
      "labels": ["12-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8"]},
+    {"points": [125, 240, 200, 170, 195, 160, 185],
+     "labels": ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]},
     {"points": [750, 1250, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750],
      "labels": ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"]},
     {"points": [3350, 4250, 4700, 5100, 4950, 4800, 5250, 5000, 4750, 4550, 4800, 5150],

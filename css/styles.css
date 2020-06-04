@@ -33,6 +33,11 @@ h1 {
     font-size: 1.5rem;
 }
 
+.copyright {
+    font-size: .7rem;
+    font-weight: 400;
+}
+
 .bell-icon {
     height: 40px;
     width: 30px;
@@ -160,7 +165,7 @@ canvas {
 }
 
 .alert-close {
-    margin: 0 0 0 auto;
+    margin: 0 10px 0 auto;
     cursor: pointer;
     font-size: 1.25rem;
     font-weight: 700;
